@@ -1,0 +1,14 @@
+.containor{
+    margin-top: 5%;
+}
+.index-search-input{
+    max-width: 35%;
+    width: 300px;
+    margin: 0 30% 0 30%;
+}
+.index-search-label{
+    width: auto;
+    text-align: center;
+    margin: 0 35% 0 35%;
+    font-size: 20px;
+}
