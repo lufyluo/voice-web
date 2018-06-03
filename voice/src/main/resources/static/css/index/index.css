@@ -4,6 +4,7 @@
 .index-search-input{
     max-width: 35%;
     width: 300px;
+    height: 25px;
     margin: 0 30% 0 30%;
 }
 .index-search-label{
@@ -11,4 +12,7 @@
     text-align: center;
     margin: 0 35% 0 35%;
     font-size: 20px;
+}
+.containor div:first-child{
+    margin-bottom: 7px;
 }

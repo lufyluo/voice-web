@@ -1,24 +1,34 @@
-
-window.onload =function(){
-    alert();
-    // if (document.addEventListener){
-    //     document.addEventListener("keyup",fnKeyup,true);
-    // }else{
-    //     document.attachEvent("onkeyup",fnKeyup);
-    // }
-    function fnKeyup(e){
-        if(e.keyCode==32)
-        {
+window.onload = function () {
+    var fnKeyup = function (e) {
+        if (e.keyCode == 32) {
             alert("ok");
         }
     }
-
-    layui.use('form', function(){
+    layui.use(['jquery', 'layer', 'form'], function () {
+        var $ = layui.$ //重点处
+            , layer = layui.layer;
         var form = layui.form;
-        var $ = layui.jquery
-        $(document).on("onkeyup","#search-input",fnKeyup)
-    });
 
+        var vm = new Vue({
+            el: '#vue_det',
+            data: {
+                site: "菜鸟教程",
+                url: "www.runoob.com",
+                alexa: "10000"
+            },
+            methods: {
+                details: function() {
+                    return  this.site + " - 学的不仅是技术，更是梦想！";
+                }
+            }
+        })
+
+        $(document).keydown(function (event) {
+            if (event.keyCode == 13) {
+                $
+            }
+        });
+    });
     new Vue({
         el: '#app',
         data: {
