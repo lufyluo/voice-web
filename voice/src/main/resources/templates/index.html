@@ -5,20 +5,21 @@
     <title>Title</title>
     <script src="/script/vue.min.js"></script>
     <script src="/layui/layui.js"></script>
+    <script src="/script/jquery.js"></script>
     <script src="/script/index/index.js"></script>
     <link rel="stylesheet" href=" /css/index/index.css">
 </head>
 <body>
-<div class="containor">
+<div class="containor"  id="app">
     <div class="layui-form-item layui-form-text">
         <label class="layui-form-label index-search-label">find your voice</label>
     </div>
     <div class="layui-form-item">
         <div class="layui-input-block">
-            <input id="search-input" type="text" name="title" required lay-verify="required" placeholder="" autocomplete="off" class="layui-input index-search-input">
+            <input id="search-input" type="text" name="title" required lay-verify="required" placeholder="" v-model="searchInput" value="{{searchInput}}" autocomplete="off" class="layui-input index-search-input">
         </div>
     </div>
-
+{{voiceItems}}
 </div>
 
 </body>
