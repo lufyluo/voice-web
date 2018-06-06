@@ -25,7 +25,12 @@ window.onload = function () {
 
         $(document).keydown(function (event) {
             if (event.keyCode == 13) {
-                $
+                $.ajax({
+                    url: url,
+                    data: vm.data,
+                    success: function(data){},
+                    dataType: "json"
+                });
             }
         });
     });
