@@ -1,3 +1,7 @@
+var vm;
+
+
+
 window.onload = function () {
     var fnKeyup = function (e) {
         if (e.keyCode == 32) {
@@ -9,12 +13,10 @@ window.onload = function () {
             , layer = layui.layer;
         var form = layui.form;
 
-        var vm = new Vue({
-            el: '#vue_det',
+        vm = new Vue({
+            el: '#app',
             data: {
-                site: "菜鸟教程",
-                url: "www.runoob.com",
-                alexa: "10000"
+                searchInput:""
             },
             methods: {
                 details: function() {
@@ -25,15 +27,20 @@ window.onload = function () {
 
         $(document).keydown(function (event) {
             if (event.keyCode == 13) {
-                $
+                $.ajax({
+                    url:"index/search?key="+vm.searchInput,
+                    method:"GET",
+                    success:function(e){
+                        console.log(e);
+                    },
+                    error:function(e){
+                        console.log(e);
+                    }
+                })
             }
-        });
+        })
+
     });
-    new Vue({
-        el: '#app',
-        data: {
-            message: 'Hello Vue.js!'
-        }
-    })
+
 };
 
